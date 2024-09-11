@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <div className="flex flex-col items-center p-8 bg-gray-800 text-gray-300">
+        <div className="flex flex-col items-center rounded-lg p-8 bg-gray-800 text-gray-300">
             <section className="mb-12 text-center">
                 <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
                 <p className="text-lg mb-8">
@@ -30,6 +30,7 @@ const Home = () => {
                             <li>Node.js</li>
                             <li>Express.js</li>
                             <li>MongoDB</li>
+                            <li>Socket.io</li>
                         </ul>
                     </div>
                     <div className="bg-gray-900 p-6 rounded-lg shadow-md">

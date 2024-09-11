@@ -13,7 +13,7 @@ import Contact from "./pages/contact";
 
 function App() {
     return (
-        <div className='flex flex-col min-h-screen text-gray-300 p-8'>
+        <div className='flex flex-col text-gray-300 p-8'>
             <div className='flex flex-col items-center sm:items-start sm:flex-row sm:justify-between mb-8'>
                 <h1 className='text-2xl sm:text-4xl font-bold text-center sm:text-left' style={{letterSpacing: '5px'}}>
                     Žygimantas Buzas
