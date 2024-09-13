@@ -35,7 +35,7 @@ const Projects = () => {
                 {/* Project 2: Helsword.org */}
                 <div
                     className="bg-gray-700 rounded-lg overflow-hidden shadow-lg cursor-pointer"
-                    onClick={() => handleProjectClick('http://www.helsword.org')}
+                    onClick={() => handleProjectClick('https://www.helsword.org')}
                 >
                     <img
                         src="/files/helswordchat.png"
