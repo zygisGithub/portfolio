@@ -22,7 +22,7 @@ const ProjectCard = ({ title, description, image, url, animatedImage, isVideo = 
 
     return (
         <div
-            className="bg-gray-900 rounded-lg overflow-hidden shadow-lg cursor-pointer max-w-full"
+            className="bg-gray-900 rounded-lg overflow-hidden shadow-lg cursor-pointer max-w-full flex flex-col h-full"
             onClick={handleClick}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -37,7 +37,7 @@ const ProjectCard = ({ title, description, image, url, animatedImage, isVideo = 
                         preload="none"
                         poster={image}
                     >
-                        <source src={animatedImage} type="video/mp4" />
+                        <source src={animatedImage} type="video/mp4"/>
                         Your browser does not support the video tag.
                     </video>
                 ) : (
@@ -54,18 +54,20 @@ const ProjectCard = ({ title, description, image, url, animatedImage, isVideo = 
                     />
                 )}
             </div>
-            <div className="p-4 flex flex-col text-gray-300">
-                <h3 className="text-xl font-semibold mb-2">{title}</h3>
-                <p className="mb-4">{description}</p>
-                <button
-                    className="text-blue-400 hover:underline self-start"
-                    onClick={(e) => {
-                        e.stopPropagation(); // Prevent card click
-                        window.open(url, '_blank');
-                    }}
-                >
-                    View Project
-                </button>
+            <div>
+                <div className="p-4 flex flex-col justify-between text-gray-300 h-full">
+                    <h3 className="text-xl font-semibold mb-2">{title}</h3>
+                    <p className="mb-4 min-h-[60px] sm:min-h-[72px] md:min-h-[80px]">{description}</p>
+                    <button
+                        className="text-blue-400 hover:underline self-start"
+                        onClick={(e) => {
+                            e.stopPropagation(); // Prevent card click
+                            window.open(url, '_blank');
+                        }}
+                    >
+                        View Project
+                    </button>
+                </div>
             </div>
         </div>
     );
