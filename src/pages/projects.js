@@ -1,58 +1,43 @@
+// Projects.jsx
 import React from 'react';
+import ProjectCard from "../components/projectCard";
+
+const projectList = [
+    {
+        title: 'Bidi.lt',
+        description: 'A collaborative project focused on online auctions. Developed and maintained with the bidi.lt team.',
+        image: '/files/bidilt.png',
+        url: 'https://bidi.lt',
+        animatedImage: '/files/bidigif.gif',
+        isVideo: false,
+    },
+    {
+        title: 'Live Chat Application',
+        description: 'A personal project created as a final assignment at CodeAcademy, demonstrating my skills in web development.',
+        image: '/files/helswordchat.png',
+        url: 'https://baigemojofront.onrender.com/',
+        animatedImage: '/files/chatappgif.gif',
+        isVideo: false,
+    },
+    {
+        title: 'Slot Machine',
+        description: 'A lightweight slot machine application built to demonstrate core programming concepts and interactive UI design.',
+        image: '/files/slot.png',
+        url: 'https://zygisgithub.github.io/slots/',
+        animatedImage: '/files/casinogif.gif',
+        isVideo: false,
+    },
+    // Add more projects here...
+];
 
 const Projects = () => {
-    const handleProjectClick = (url) => {
-        window.open(url, '_blank');
-    };
-
     return (
-        <div className="max-w-4xl mx-auto p-6 bg-gray-800/30 backdrop-blur-md rounded-lg shadow-lg text-gray-300">
+        <div className="max-w-4xl mx-auto p-6 bg-gray-800/30 rounded-lg shadow-lg text-gray-300">
             <h2 className="text-3xl font-bold mb-6">Projects</h2>
-
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {/* Project 1: bidi.lt */}
-                <div
-                    className="bg-gray-700 rounded-lg overflow-hidden shadow-lg cursor-pointer"
-                    onClick={() => handleProjectClick('https://bidi.lt')}
-                >
-                    <img
-                        src="/files/bidilt.png"
-                        alt="bidi.lt"
-                        className="w-full h-48 object-cover"
-                    />
-                    <div className="p-4">
-                        <h3 className="text-xl font-semibold mb-2">Bidi.lt</h3>
-                        <p className="mb-4">
-                            A collaborative project focused on online auctions.
-                            Developed and maintained with bidi.lt team.
-                        </p>
-                        <button className="text-blue-400 hover:underline">
-                            View Project
-                        </button>
-                    </div>
-                </div>
-
-                {/* Project 2: Helsword.org */}
-                <div
-                    className="bg-gray-700 rounded-lg overflow-hidden shadow-lg cursor-pointer"
-                    onClick={() => handleProjectClick('https://baigemojofront.onrender.com/')}
-                >
-                    <img
-                        src="/files/helswordchat.png"
-                        alt="https://baigemojofront.onrender.com/"
-                        className="w-full h-48 object-cover"
-                    />
-                    <div className="p-4">
-                        <h3 className="text-xl font-semibold mb-2">Live Chat Application</h3>
-                        <p className="mb-4">
-                            A personal project created as a final assignment at CodeAcademy,
-                            demonstrating my skills in web development.
-                        </p>
-                        <button className="text-blue-400 hover:underline">
-                            View Project
-                        </button>
-                    </div>
-                </div>
+                {projectList.map((project, index) => (
+                    <ProjectCard key={index} {...project} />
+                ))}
             </div>
         </div>
     );

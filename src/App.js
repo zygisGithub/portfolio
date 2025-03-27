@@ -20,14 +20,9 @@ function App() {
 
             {/* App Content */}
             <div className='relative z-10 flex flex-col p-8'>
-                <div className='flex flex-col items-center sm:items-start sm:flex-row sm:justify-between mb-8'>
-                    <h1 className='text-2xl sm:text-4xl font-bold text-center sm:text-left' style={{ letterSpacing: '5px' }}>
-                        Žygimantas Buzas
-                    </h1>
-                </div>
 
                 <Router>
-                    <div className='flex flex-col sm:flex-row gap-8'>
+                    <div className='flex flex-col lg:flex-row gap-8'>
                         <Navbar />
                         <main className='flex-grow'>
                             <Routes>
