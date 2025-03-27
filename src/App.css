@@ -3,11 +3,6 @@
 @tailwind utilities;
 
 body {
-    /*background: linear-gradient(to top,*/
-    /*rgba(59, 130, 246, 1) 0%,     !* soft Tailwind blue-500 *!*/
-    /*#020f18 80%,                    !* transition to your black *!*/
-    /*#020f18 100%                    !* solid black up to top *!*/
-    /*);*/
     background: black;
     min-height: 100vh;
     height: 100%;
@@ -22,6 +17,7 @@ body {
     z-index: 0;
     pointer-events: none;
     overflow: hidden;
+    will-change: transform;
 }
 
 .flying-square {

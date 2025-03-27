@@ -41,7 +41,7 @@ const Contact = () => {
     };
 
     return (
-        <div className="max-w-4xl mx-auto p-6 bg-gray-800/10 rounded-lg shadow-lg text-gray-300 flex flex-col md:flex-row gap-10">
+        <div className="max-w-4xl mx-auto p-6 text-gray-300 flex flex-col md:flex-row gap-10">
             {/* Left Column: Text + Socials */}
             <div className="md:w-1/2">
                 <h2 className="text-3xl font-bold mb-4">Let’s Connect</h2>
@@ -72,7 +72,7 @@ const Contact = () => {
             </div>
 
             {/* Right Column: Contact Form */}
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 bg-gray-800/30 rounded text-white p-10">
                 <h3 className="text-2xl font-bold mb-4">Contact Me</h3>
 
                 {successMessage && <div className="text-green-500 mb-4">{successMessage}</div>}
