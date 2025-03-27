@@ -20,7 +20,7 @@ function Navbar() {
     return (
         <div className='flex flex-col text-sm sm:text-xl justify-center sm:justify-start gap-4'>
             <h1
-                className='text-2xl sm:text-4xl font-bold text-center sm:text-left'
+                className='text-4xl font-bold text-center'
                 style={{ letterSpacing: '5px' }}
             >
                 Žygimantas Buzas
