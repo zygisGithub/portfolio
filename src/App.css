@@ -26,10 +26,6 @@ body::after {
 }
 
 
-
-
-
-
 .flying-squares {
     position: fixed;
     inset: 0;
