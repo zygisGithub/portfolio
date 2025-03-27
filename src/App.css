@@ -3,32 +3,18 @@
 @tailwind utilities;
 
 body {
-    background-color: #020f18;
+    /*background: linear-gradient(to top,*/
+    /*rgba(59, 130, 246, 1) 0%,     !* soft Tailwind blue-500 *!*/
+    /*#020f18 80%,                    !* transition to your black *!*/
+    /*#020f18 100%                    !* solid black up to top *!*/
+    /*);*/
+    background: black;
     min-height: 100vh;
     height: 100%;
 }
-.grid-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    background-size: 50px 50px;
-    background-image:
-            linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    animation: subtlePulse 3s infinite ease-in-out;
-}
 
-@keyframes subtlePulse {
-    0%, 100% {
-        opacity: 0.2;
-    }
-    50% {
-        opacity: 0.4;
-    }
-}
+
+
 
 .flying-squares {
     position: fixed;
@@ -42,9 +28,24 @@ body {
     position: absolute;
     width: 20px;
     height: 20px;
-    background-color: rgba(96, 165, 250, 0.7); /* Tailwind blue-400 */
-    animation: flyAway 4s linear infinite;
+    background-color: rgba(96, 165, 250, 0.7);
+    animation: flyAway 4s linear infinite, glowPulse 1s ease-in-out infinite;
     opacity: 0;
+    box-shadow:
+            0 0 20px rgba(96, 165, 250, 0.9),
+            0 0 40px rgba(96, 165, 250, 0.6),
+            0 0 60px rgba(96, 165, 250, 0.4);
+
+    border-radius: 2px;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 0 8px rgba(96, 165, 250, 0.8), 0 0 12px rgba(96, 165, 250, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(96, 165, 250, 1), 0 0 16px rgba(96, 165, 250, 0.7);
+    }
 }
 
 @keyframes flyAway {
@@ -59,7 +60,7 @@ body {
         opacity: 1;
     }
     100% {
-        transform: translate(var(--x), var(--y)) scale(0.5);
+        transform: translate(var(--x), var(--y)) scale(0.2);
         opacity: 0;
     }
 }
