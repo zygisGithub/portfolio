@@ -6,7 +6,7 @@ function Navbar() {
     const location = useLocation();
 
     const getLinkStyle = (path) => {
-        return location.pathname === path ? 'text-bold text-blue-500' : '';
+        return location.pathname === path ? 'text-bold text-blue-400' : '';
     };
 
     return (

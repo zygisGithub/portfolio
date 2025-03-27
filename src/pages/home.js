@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <div className="flex flex-col items-center rounded-lg p-8 bg-gray-800 text-gray-300">
+        <div className="max-w-4xl mx-auto p-6 bg-gray-800/30 backdrop-blur-md rounded-lg shadow-lg text-gray-300">
             <section className="mb-12 text-center">
                 <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
                 <p className="text-lg mb-8">

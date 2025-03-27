@@ -41,7 +41,7 @@ const Contact = () => {
     };
 
     return (
-        <div className="max-w-md mx-auto p-6 bg-gray-800 rounded-lg w-[90%] shadow-lg text-gray-300">
+        <div className="max-w-md mx-auto p-6 bg-gray-800/30 backdrop-blur-md rounded-lg w-[90%] shadow-lg text-gray-300">
             <h2 className="text-2xl font-bold mb-4">Contact Me</h2>
 
             {successMessage && <div className="text-green-500 mb-4">{successMessage}</div>}
