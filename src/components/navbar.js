@@ -30,13 +30,13 @@ function Navbar() {
 
                 <div
                     onClick={() => nav("/")}
-                    className={`hover:cursor-pointer text-center ${getLinkStyle("/")}`}
+                    className={`hover:cursor-pointer text-center w-full ${getLinkStyle("/")}`}
                 >
                     Home
                 </div>
                 <div
                     onClick={() => nav("/projects")}
-                    className={`hover:cursor-pointer text-center ${getLinkStyle(
+                    className={`hover:cursor-pointer text-center w-full ${getLinkStyle(
                         "/projects"
                     )}`}
                 >
@@ -44,7 +44,7 @@ function Navbar() {
                 </div>
                 <div
                     onClick={() => nav("/about")}
-                    className={`hover:cursor-pointer text-center ${getLinkStyle(
+                    className={`hover:cursor-pointer text-center w-full ${getLinkStyle(
                         "/about"
                     )}`}
                 >
@@ -52,7 +52,7 @@ function Navbar() {
                 </div>
                 <div
                     onClick={() => nav("/contact")}
-                    className={`hover:cursor-pointer text-center ${getLinkStyle(
+                    className={`hover:cursor-pointer text-center w-full ${getLinkStyle(
                         "/contact"
                     )}`}
                 >
