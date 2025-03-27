@@ -63,6 +63,10 @@ body {
         opacity: 0;
     }
 }
+html {
+    scrollbar-gutter: stable;
+}
+
 
 
 
