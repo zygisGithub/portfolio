@@ -22,7 +22,7 @@ const ProjectCard = ({ title, description, image, url, animatedImage, isVideo = 
 
     return (
         <div
-            className="bg-gray-900 rounded-lg overflow-hidden shadow-lg cursor-pointer max-w-full flex flex-col h-full"
+            className="bg-gray-800/30 rounded-lg overflow-hidden shadow-lg cursor-pointer max-w-full flex flex-col h-full"
             onClick={handleClick}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}

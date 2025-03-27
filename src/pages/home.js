@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <div className="max-w-4xl mx-auto p-6 bg-gray-800/30 rounded-lg shadow-lg text-gray-300">
+        <div className="max-w-4xl mx-auto p-6 bg-gray-800/10 rounded-lg shadow-lg text-gray-300">
             <section className="mb-12 text-center">
                 <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
                 <p className="text-lg mb-8">
@@ -13,7 +13,7 @@ const Home = () => {
             <section className="w-full max-w-4xl mb-12">
                 <h2 className="text-3xl font-bold mb-6">Tech Capabilities</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div className="bg-gray-900 p-6 rounded-lg shadow-md">
+                    <div className="bg-gray-800/30 p-6 rounded-lg shadow-md">
                         <h3 className="text-2xl font-semibold mb-4">Frontend</h3>
                         <ul className="list-disc list-inside">
                             <li>React</li>
@@ -24,7 +24,7 @@ const Home = () => {
                             <li>Tailwind CSS</li>
                         </ul>
                     </div>
-                    <div className="bg-gray-900 p-6 rounded-lg shadow-md">
+                    <div className="bg-gray-800/30 p-6 rounded-lg shadow-md">
                         <h3 className="text-2xl font-semibold mb-4">Backend</h3>
                         <ul className="list-disc list-inside">
                             <li>Node.js</li>
@@ -33,7 +33,7 @@ const Home = () => {
                             <li>Socket.io</li>
                         </ul>
                     </div>
-                    <div className="bg-gray-900 p-6 rounded-lg shadow-md">
+                    <div className="bg-gray-800/30 p-6 rounded-lg shadow-md">
                         <h3 className="text-2xl font-semibold mb-4">Tools & Others</h3>
                         <ul className="list-disc list-inside">
                             <li>Git & GitHub</li>
