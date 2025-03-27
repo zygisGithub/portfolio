@@ -7,6 +7,25 @@ body {
     min-height: 100vh;
     height: 100%;
 }
+body::after {
+    content: '© 2025 Zygimantas Buzas. All rights reserved.';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    background: black;
+    opacity: 0.5;
+    color: white;
+    font-size: 0.875rem;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+
 
 
 
