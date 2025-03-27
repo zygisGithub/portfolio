@@ -51,7 +51,7 @@ const About = () => {
                     <a
                         href="/files/ZygimantasBuzasENCV.pdf"
                         download="Zygimantas Buzas.pdf"
-                        className="min-w-[220px] w-full py-2 px-4 bg-green-600 hover:bg-green-700 rounded text-white font-medium text-center whitespace-nowrap"
+                        className="min-w-[220px] w-full py-2 px-4 bg-gray-800 hover:bg-gray-700 rounded text-white font-medium text-center whitespace-nowrap"
                     >
                         Download English CV
                     </a>
@@ -71,7 +71,7 @@ const About = () => {
                     <a
                         href="/files/ZygimantasBuzasLTCV.pdf"
                         download="Zygimantas Buzas.pdf"
-                        className="min-w-[220px] w-full py-2 px-4 bg-green-600 hover:bg-green-700 rounded text-white font-medium text-center whitespace-nowrap"
+                        className="min-w-[220px] w-full py-2 px-4 bg-gray-800 hover:bg-gray-700 rounded text-white font-medium text-center whitespace-nowrap"
                     >
                         Download Lithuanian CV
                     </a>
