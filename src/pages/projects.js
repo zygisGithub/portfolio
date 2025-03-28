@@ -45,50 +45,67 @@ const Projects = () => {
         <div className="max-w-4xl mx-auto p-6 text-gray-300">
             <h2 className="text-3xl font-bold mb-6 text-center">Projects</h2>
 
-            <LayoutGroup>
-                <div className="relative flex items-center justify-center space-x-6">
-
-                    {/* Left preview */}
+            {/* Stacked layout for mobile */}
+            <div className="flex flex-col gap-6 sm:hidden">
+                {projectList.map((project, index) => (
                     <motion.div
-                        layout
-                        className="w-1/4 hidden sm:block opacity-50 hover:opacity-80 transition cursor-pointer"
-                        onClick={handlePrev}
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
                     >
-                        <ProjectCard
-                            {...projectList[(activeIndex - 1 + projectList.length) % projectList.length]}
-                            small
-                        />
+                        <ProjectCard {...project} />
                     </motion.div>
+                ))}
+            </div>
 
-                    {/* Center main project */}
-                    <motion.div layout className="w-full sm:w-1/2 z-10">
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={activeIndex}
-                                layout
-                                initial={{ scale: 0.8, opacity: 0 }}
-                                animate={{ scale: 1, opacity: 1 }}
-                                exit={{ scale: 0.8, opacity: 0 }}
-                                transition={{ duration: 0.4 }}
-                            >
-                                <ProjectCard {...projectList[activeIndex]} />
-                            </motion.div>
-                        </AnimatePresence>
-                    </motion.div>
+            {/* Carousel layout for sm and up */}
+            <div className="hidden sm:block">
+                <LayoutGroup>
+                    <div className="relative flex items-center justify-center space-x-6">
 
-                    {/* Right preview */}
-                    <motion.div
-                        layout
-                        className="w-1/4 hidden sm:block opacity-50 hover:opacity-80 transition cursor-pointer"
-                        onClick={handleNext}
-                    >
-                        <ProjectCard
-                            {...projectList[(activeIndex + 1) % projectList.length]}
-                            small
-                        />
-                    </motion.div>
-                </div>
-            </LayoutGroup>
+                        {/* Left preview */}
+                        <motion.div
+                            layout
+                            className="w-1/4 opacity-50 hover:opacity-80 transition cursor-pointer"
+                            onClick={handlePrev}
+                        >
+                            <ProjectCard
+                                {...projectList[(activeIndex - 1 + projectList.length) % projectList.length]}
+                                small
+                            />
+                        </motion.div>
+
+                        {/* Center main project */}
+                        <motion.div layout className="w-1/2 z-10">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={activeIndex}
+                                    layout
+                                    initial={{ scale: 0.8, opacity: 0 }}
+                                    animate={{ scale: 1, opacity: 1 }}
+                                    exit={{ scale: 0.8, opacity: 0 }}
+                                    transition={{ duration: 0.4 }}
+                                >
+                                    <ProjectCard {...projectList[activeIndex]} />
+                                </motion.div>
+                            </AnimatePresence>
+                        </motion.div>
+
+                        {/* Right preview */}
+                        <motion.div
+                            layout
+                            className="w-1/4 opacity-50 hover:opacity-80 transition cursor-pointer"
+                            onClick={handleNext}
+                        >
+                            <ProjectCard
+                                {...projectList[(activeIndex + 1) % projectList.length]}
+                                small
+                            />
+                        </motion.div>
+                    </div>
+                </LayoutGroup>
+            </div>
         </div>
     );
 };
