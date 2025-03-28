@@ -11,12 +11,14 @@ import Projects from "./pages/projects";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import FlyingSquares from "./components/background";
+import TwinklingStars from "./components/Twinkle";
 
 function App() {
     return (
         <div className="relative z-10 min-h-screen overflow-hidden text-gray-300 flex justify-center">
             {/* Fullscreen background grid */}
             <FlyingSquares />
+            <TwinklingStars/>
 
             {/* App Content */}
             <div className='relative z-10 flex flex-col p-8'>
