@@ -14,7 +14,6 @@ body::after {
     left: 0;
     width: 100vw;
     height: 60px;
-    background: black;
     opacity: 0.5;
     color: white;
     font-size: 0.875rem;
@@ -23,8 +22,8 @@ body::after {
     align-items: center;
     justify-content: center;
     padding: 0 1rem;
+    z-index: 1;
 }
-
 
 .flying-squares {
     position: fixed;
@@ -34,28 +33,32 @@ body::after {
     overflow: hidden;
     will-change: transform;
 }
-
 .flying-square {
     position: absolute;
     width: 20px;
     height: 20px;
-    background-color: rgba(96, 165, 250, 0.7);
-    animation: flyAway 4s linear infinite, glowPulse 1s ease-in-out infinite;
-    opacity: 0;
-    box-shadow:
-            0 0 20px rgba(96, 165, 250, 0.9),
-            0 0 40px rgba(96, 165, 250, 0.6),
-            0 0 60px rgba(96, 165, 250, 0.4);
-
     border-radius: 2px;
+    opacity: 0;
+    animation: flyAway 4s linear infinite, glowPulse 1s ease-in-out infinite;
+
+    /* Firefly glow colors */
+    background-color: rgba(212, 255, 100, 0.6);
+    box-shadow:
+            0 0 10px rgba(212, 255, 100, 0.9),
+            0 0 20px rgba(180, 255, 120, 0.6),
+            0 0 40px rgba(150, 255, 100, 0.4);
 }
 
 @keyframes glowPulse {
     0%, 100% {
-        box-shadow: 0 0 8px rgba(96, 165, 250, 0.8), 0 0 12px rgba(96, 165, 250, 0.5);
+        box-shadow:
+                0 0 8px rgba(212, 255, 100, 0.9),
+                0 0 12px rgba(180, 255, 120, 0.5);
     }
     50% {
-        box-shadow: 0 0 10px rgba(96, 165, 250, 1), 0 0 16px rgba(96, 165, 250, 0.7);
+        box-shadow:
+                0 0 12px rgba(212, 255, 100, 1),
+                0 0 16px rgba(180, 255, 120, 0.7);
     }
 }
 
@@ -75,6 +78,7 @@ body::after {
         opacity: 0;
     }
 }
+
 html {
     scrollbar-gutter: stable;
 }
@@ -109,6 +113,33 @@ html {
     }
 }
 
+.grass-blades {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
 
+.grass-blade {
+    position: absolute;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to top, #345934, #244824);
+    transform-origin: bottom center;
+    animation: sway-blade ease-in-out infinite;
+    opacity: 0.9;
+    z-index: 1;
+}
 
-
+@keyframes sway-blade {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}

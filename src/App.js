@@ -12,6 +12,7 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import FlyingSquares from "./components/FlyingSquares";
 import TwinklingStars from "./components/TwinkleStars";
+import Grass from "./components/Grass";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
             {/* Fullscreen background grid */}
             <FlyingSquares />
             <TwinklingStars/>
+            <Grass/>
 
             {/* App Content */}
             <div className='relative z-10 flex flex-col p-8'>
