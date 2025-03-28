@@ -72,7 +72,7 @@ const Contact = () => {
             </div>
 
             {/* Right Column: Contact Form */}
-            <div className="md:w-1/2 bg-gray-800/30 rounded text-white p-10">
+            <div className="md:w-1/2 bg-gray-800/30 rounded text-white p-4 md:p-10 lg:p-10">
                 <h3 className="text-2xl font-bold mb-4">Contact Me</h3>
 
                 {successMessage && <div className="text-green-500 mb-4">{successMessage}</div>}
