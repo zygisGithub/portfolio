@@ -1,5 +1,6 @@
 // Projects.jsx
-import React from 'react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 import ProjectCard from "../components/projectCard";
 
 const projectList = [
@@ -27,18 +28,67 @@ const projectList = [
         animatedImage: '/files/casinogif.gif',
         isVideo: false,
     },
-    // Add more projects here...
 ];
 
 const Projects = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const handlePrev = () => {
+        setActiveIndex((prevIndex) => (prevIndex - 1 + projectList.length) % projectList.length);
+    };
+
+    const handleNext = () => {
+        setActiveIndex((prevIndex) => (prevIndex + 1) % projectList.length);
+    };
+
     return (
         <div className="max-w-4xl mx-auto p-6 text-gray-300">
-            <h2 className="text-3xl font-bold mb-6">Projects</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {projectList.map((project, index) => (
-                    <ProjectCard key={index} {...project} />
-                ))}
-            </div>
+            <h2 className="text-3xl font-bold mb-6 text-center">Projects</h2>
+
+            <LayoutGroup>
+                <div className="relative flex items-center justify-center space-x-6">
+
+                    {/* Left preview */}
+                    <motion.div
+                        layout
+                        className="w-1/4 hidden sm:block opacity-50 hover:opacity-80 transition cursor-pointer"
+                        onClick={handlePrev}
+                    >
+                        <ProjectCard
+                            {...projectList[(activeIndex - 1 + projectList.length) % projectList.length]}
+                            small
+                        />
+                    </motion.div>
+
+                    {/* Center main project */}
+                    <motion.div layout className="w-full sm:w-1/2 z-10">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={activeIndex}
+                                layout
+                                initial={{ scale: 0.8, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                exit={{ scale: 0.8, opacity: 0 }}
+                                transition={{ duration: 0.4 }}
+                            >
+                                <ProjectCard {...projectList[activeIndex]} />
+                            </motion.div>
+                        </AnimatePresence>
+                    </motion.div>
+
+                    {/* Right preview */}
+                    <motion.div
+                        layout
+                        className="w-1/4 hidden sm:block opacity-50 hover:opacity-80 transition cursor-pointer"
+                        onClick={handleNext}
+                    >
+                        <ProjectCard
+                            {...projectList[(activeIndex + 1) % projectList.length]}
+                            small
+                        />
+                    </motion.div>
+                </div>
+            </LayoutGroup>
         </div>
     );
 };
