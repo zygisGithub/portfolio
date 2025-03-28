@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-const SQUARE_COUNT = 30;
+const BASE_SQUARE_COUNT = 30;
 
 const FlyingSquares = () => {
     const [squares, setSquares] = useState([]);
 
-    useEffect(() => {
-        const newSquares = Array.from({ length: SQUARE_COUNT }, (_, i) => {
+    const generateSquares = (count) => {
+        return Array.from({ length: count }, (_, i) => {
             const top = Math.random() * 100;
             const left = Math.random() * 100;
             const x = (Math.random() - 0.5) * 300 + "px";
@@ -15,8 +15,6 @@ const FlyingSquares = () => {
 
             return {
                 id: i,
-                top: `${top}%`,
-                left: `${left}%`,
                 style: {
                     top: `${top}%`,
                     left: `${left}%`,
@@ -26,8 +24,29 @@ const FlyingSquares = () => {
                 },
             };
         });
+    };
 
-        setSquares(newSquares);
+    const updateSquareCount = () => {
+        const isSmallScreen = window.innerWidth < 640;
+        const adjustedCount = isSmallScreen ? BASE_SQUARE_COUNT / 3 : BASE_SQUARE_COUNT;
+        setSquares(generateSquares(adjustedCount));
+    };
+
+    useEffect(() => {
+        updateSquareCount();
+
+        const handleResize = () => {
+            clearTimeout(window.__resizeTimer);
+            window.__resizeTimer = setTimeout(() => {
+                updateSquareCount();
+            }, 150);
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+            clearTimeout(window.__resizeTimer);
+        };
     }, []);
 
     return (

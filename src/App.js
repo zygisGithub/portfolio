@@ -10,8 +10,8 @@ import Home from "./pages/home";
 import Projects from "./pages/projects";
 import About from "./pages/about";
 import Contact from "./pages/contact";
-import FlyingSquares from "./components/background";
-import TwinklingStars from "./components/Twinkle";
+import FlyingSquares from "./components/FlyingSquares";
+import TwinklingStars from "./components/TwinkleStars";
 
 function App() {
     return (

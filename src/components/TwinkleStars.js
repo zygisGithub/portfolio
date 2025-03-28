@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 
-const STAR_COUNT = 100;
+const BASE_STAR_COUNT = 100;
 
 const TwinklingStars = () => {
     const [stars, setStars] = useState([]);
 
-    useEffect(() => {
-        const newStars = Array.from({ length: STAR_COUNT }, (_, i) => {
+    const generateStars = (count) => {
+        return Array.from({ length: count }, (_, i) => {
             const top = Math.random() * 100;
             const left = Math.random() * 100;
             const delay = Math.random() * 3;
-            const size = Math.random() * 2 + 1; // size between 1px and 3px
+            const size = Math.random() * 2 + 1;
 
             return {
                 id: i,
@@ -23,8 +23,29 @@ const TwinklingStars = () => {
                 },
             };
         });
+    };
 
-        setStars(newStars);
+    const updateStarCount = () => {
+        const isSmallScreen = window.innerWidth < 640;
+        const adjustedCount = isSmallScreen ? BASE_STAR_COUNT / 3 : BASE_STAR_COUNT;
+        setStars(generateStars(adjustedCount));
+    };
+
+    useEffect(() => {
+        updateStarCount();
+
+        const handleResize = () => {
+            clearTimeout(window.__resizeTimerStars);
+            window.__resizeTimerStars = setTimeout(() => {
+                updateStarCount();
+            }, 150);
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+            clearTimeout(window.__resizeTimerStars);
+        };
     }, []);
 
     return (
