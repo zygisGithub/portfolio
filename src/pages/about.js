@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { UserRound } from 'lucide-react';
 
 const About = () => {
     const [showEnglishPreview, setShowEnglishPreview] = useState(false);
@@ -6,7 +7,10 @@ const About = () => {
 
     return (
         <div className="max-w-4xl mx-auto p-6 text-gray-300">
-            <h2 className="text-3xl font-bold mb-6">About Me</h2>
+            <h2 className="text-4xl font-bold mb-6 tracking-wider flex items-center gap-2">
+                <UserRound className="text-blue-400 w-6 h-6"/>
+                About Me
+            </h2>
 
             <p className="mb-6">
                 I began my programming journey at{' '}

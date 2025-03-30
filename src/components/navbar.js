@@ -18,9 +18,11 @@ function Navbar() {
     };
 
     return (
-        <div className="flex flex-col text-sm sm:text-xl justify-center sm:justify-start gap-4">
+        <div className="flex flex-col text-sm sm:text-xl justify-center sm:justify-start gap-4 lg:border-r lg:border-gray-700 lg:pr-6">
+
+
             <h1
-                className="relative text-4xl font-bold text-center inline-block pb-2 after:content-[''] after:block after:h-[3px] after:w-full after:mx-auto after:mt-2 after:bg-blue-400 after:rounded-full"
+                className="relative text-4xl font-bold text-center inline-block pb-2 after:content-[''] after:block after:h-[2px] after:w-full after:mx-auto after:mt-2 after:bg-blue-400 after:rounded-full "
                 style={{letterSpacing: "5px"}}
             >
                 <span className="text-blue-400">Žygimantas</span>{" "}
@@ -35,7 +37,7 @@ function Navbar() {
                     onClick={() => nav("/")}
                     className={`hover:cursor-pointer text-center w-full ${getLinkStyle("/")}`}
                 >
-                Home
+                    Home
                 </div>
                 <div
                     onClick={() => nav("/projects")}
