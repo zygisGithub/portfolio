@@ -35,8 +35,8 @@ body::after {
 }
 .flying-square {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 5px;
+    height: 5px;
     border-radius: 2px;
     opacity: 0;
     animation: flyAway 10s linear infinite, glowPulse 1s ease-in-out infinite;
