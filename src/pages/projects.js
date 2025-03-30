@@ -46,12 +46,12 @@ const Projects = () => {
     };
 
     return (
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 text-gray-300 relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-gray-300 relative z-10">
             {/* Header */}
             <div className="mb-10">
                 <div className="flex items-center gap-2 mb-2">
                     <FolderKanban className="text-blue-400 w-6 h-6"/>
-                    <h2 className="text-4xl font-bold tracking-wider">Projects</h2>
+                    <h2 className="text-3xl sm:text-4xl font-bold tracking-wider">Projects</h2>
                 </div>
                 <p className="text-gray-400 max-w-2xl">
                     Here are some of the projects I've worked on, featuring everything from real-world apps to fun

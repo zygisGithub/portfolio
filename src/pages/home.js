@@ -3,10 +3,10 @@ import { Laptop2, Server, Wrench } from 'lucide-react';
 
 const Home = () => {
     return (
-        <div className="max-w-4xl mx-auto p-6 text-gray-300">
+        <div className="max-w-4xl mx-auto px-6 text-gray-300">
             {/* Intro */}
             <section className="mb-12 text-center">
-                <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
+                <h1 className="text-3xl sm:text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
                 <p className="text-gray-400 mb-2">
                     MERN Stack Developer · Problem Solver · UI Enthusiast
                 </p>

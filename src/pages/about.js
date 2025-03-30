@@ -6,8 +6,8 @@ const About = () => {
     const [showLithuanianPreview, setShowLithuanianPreview] = useState(false);
 
     return (
-        <div className="max-w-4xl mx-auto p-6 text-gray-300">
-            <h2 className="text-4xl font-bold mb-6 tracking-wider flex items-center gap-2">
+        <div className="max-w-4xl mx-auto px-6 text-gray-300">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-wider flex items-center gap-2">
                 <UserRound className="text-blue-400 w-6 h-6"/>
                 About Me
             </h2>
