@@ -20,19 +20,22 @@ function Navbar() {
     return (
         <div className="flex flex-col text-sm sm:text-xl justify-center sm:justify-start gap-4">
             <h1
-                className="text-4xl font-bold text-center"
-                style={{ letterSpacing: "5px" }}
+                className="relative text-4xl font-bold text-center inline-block pb-2 after:content-[''] after:block after:h-[3px] after:w-full after:mx-auto after:mt-2 after:bg-blue-400 after:rounded-full"
+                style={{letterSpacing: "5px"}}
             >
-                Žygimantas Buzas
+                <span className="text-blue-400">Žygimantas</span>{" "}
+                <span className="text-white">Buzas</span>
             </h1>
 
-            <div className="grid grid-cols-2 md:flex lg:flex md:flex-row lg:flex-col md:justify-center gap-4 justify-items-center">
+
+            <div
+                className="grid grid-cols-2 md:flex lg:flex md:flex-row lg:flex-col md:justify-center gap-4 justify-items-center">
 
                 <div
                     onClick={() => nav("/")}
                     className={`hover:cursor-pointer text-center w-full ${getLinkStyle("/")}`}
                 >
-                    Home
+                Home
                 </div>
                 <div
                     onClick={() => nav("/projects")}
