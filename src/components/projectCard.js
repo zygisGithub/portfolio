@@ -4,10 +4,9 @@ const ProjectCard = ({ title, description, image, url, animatedImage, isVideo = 
     const videoRef = useRef(null);
 
     const handleClick = () => {
-        if (small) return; // Prevent redirection
+        if (small) return;
         window.open(url, '_blank');
     };
-
 
     const handleMouseEnter = () => {
         if (isVideo) {
@@ -24,18 +23,19 @@ const ProjectCard = ({ title, description, image, url, animatedImage, isVideo = 
 
     return (
         <div
-            className={`bg-gray-800/30 rounded overflow-hidden shadow-lg cursor-pointer flex flex-col h-full transition-transform duration-300 ${
-                small ? 'scale-90 hover:scale-95' : 'scale-100'
+            className={`relative bg-gray-800/30 rounded overflow-hidden shadow-lg cursor-pointer flex flex-col h-full transition-transform duration-300 ${
+                small ? 'scale-90 hover:scale-95' : 'scale-100 hover:scale-105'
             }`}
             onClick={handleClick}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <div className={`${small ? 'h-36' : 'h-48'} w-full overflow-hidden`}>
+            <div className={`${small ? 'h-36' : 'h-48'} w-full overflow-hidden relative group`}>
+                {/* Image or video */}
                 {isVideo ? (
                     <video
                         ref={videoRef}
-                        className="w-full h-full object-cover block"
+                        className="w-full h-full object-cover block grayscale group-hover:grayscale-0 transition-all duration-500"
                         muted
                         loop
                         preload="none"
@@ -48,7 +48,7 @@ const ProjectCard = ({ title, description, image, url, animatedImage, isVideo = 
                     <img
                         src={image}
                         alt={title}
-                        className="w-full h-full object-cover block transition-all duration-300"
+                        className="w-full h-full object-cover block grayscale group-hover:grayscale-0 transition-all duration-500"
                         onMouseEnter={(e) => {
                             if (animatedImage) e.currentTarget.src = animatedImage;
                         }}
@@ -57,6 +57,9 @@ const ProjectCard = ({ title, description, image, url, animatedImage, isVideo = 
                         }}
                     />
                 )}
+
+                {/* Subtle blue overlay */}
+                <div className="absolute inset-0 bg-blue-900/30 group-hover:bg-transparent transition-all duration-500 pointer-events-none" />
             </div>
 
             <div className={`p-4 text-gray-300 flex flex-col justify-between ${small ? 'text-sm' : ''}`}>
