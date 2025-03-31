@@ -12,30 +12,32 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import FlyingSquares from "./components/FlyingSquares";
 import TwinklingStars from "./components/TwinkleStars";
+import Footer from "./components/footer";
 
 function App() {
     return (
         <div className="relative z-10 min-h-screen overflow-hidden text-gray-300 flex justify-center">
             {/* Fullscreen background grid */}
-            <FlyingSquares />
+            <FlyingSquares/>
             <TwinklingStars/>
 
             {/* App Content */}
-            <div className='relative z-10 flex flex-col p-8'>
+            <div className='relative z-10 flex flex-col p-8 justify-between'>
 
                 <Router>
                     <div className='flex flex-col lg:flex-row gap-8'>
-                        <Navbar />
+                        <Navbar/>
                         <main className='flex-grow'>
                             <Routes>
-                                <Route element={<Home />} path='/' />
-                                <Route element={<Projects />} path='/projects' />
-                                <Route element={<About />} path='/about' />
-                                <Route element={<Contact />} path='/contact' />
+                                <Route element={<Home/>} path='/'/>
+                                <Route element={<Projects/>} path='/projects'/>
+                                <Route element={<About/>} path='/about'/>
+                                <Route element={<Contact/>} path='/contact'/>
                             </Routes>
                         </main>
                     </div>
                 </Router>
+                <Footer></Footer>
             </div>
         </div>
     );
