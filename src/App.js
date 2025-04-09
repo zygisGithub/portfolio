@@ -18,7 +18,7 @@ function App() {
     return (
         <div className="relative z-10 min-h-screen overflow-hidden text-gray-300 flex justify-center">
             {/* Fullscreen background grid */}
-            <FlyingSquares/>
+            {/*<FlyingSquares/>*/}
             <TwinklingStars/>
 
             {/* App Content */}
