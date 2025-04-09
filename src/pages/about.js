@@ -48,14 +48,14 @@ const About = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-14 max-w-md w-full">
                     <button
                         onClick={() => setShowEnglishPreview(true)}
-                        className="min-w-[220px] w-full py-2 px-4 bg-blue-500 hover:bg-blue-600 rounded text-white font-medium text-center whitespace-nowrap"
+                        className="min-w-[220px] w-full py-2 px-4 bg-blue-500/30 hover:bg-blue-600/30 rounded text-white font-medium text-center whitespace-nowrap"
                     >
                         Preview English CV
                     </button>
                     <a
                         href="/files/ZygimantasBuzasENCV.pdf"
                         download="Zygimantas Buzas.pdf"
-                        className="min-w-[220px] w-full py-2 px-4 bg-gray-800 hover:bg-gray-700 rounded text-white font-medium text-center whitespace-nowrap"
+                        className="min-w-[220px] w-full py-2 px-4 bg-gray-800/30 hover:bg-gray-700/30 rounded text-white font-medium text-center whitespace-nowrap"
                     >
                         Download English CV
                     </a>
@@ -68,14 +68,14 @@ const About = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-14 max-w-md w-full">
                     <button
                         onClick={() => setShowLithuanianPreview(true)}
-                        className="min-w-[220px] w-full py-2 px-4 bg-blue-500 hover:bg-blue-600 rounded text-white font-medium text-center whitespace-nowrap"
+                        className="min-w-[220px] w-full py-2 px-4 bg-blue-500/30 hover:bg-blue-600/30 rounded text-white font-medium text-center whitespace-nowrap"
                     >
                         Preview Lithuanian CV
                     </button>
                     <a
                         href="/files/ZygimantasBuzasLTCV.pdf"
                         download="Zygimantas Buzas.pdf"
-                        className="min-w-[220px] w-full py-2 px-4 bg-gray-800 hover:bg-gray-700 rounded text-white font-medium text-center whitespace-nowrap"
+                        className="min-w-[220px] w-full py-2 px-4 bg-gray-800/30 hover:bg-gray-700/30 rounded text-white font-medium text-center whitespace-nowrap"
                     >
                         Download Lithuanian CV
                     </a>
