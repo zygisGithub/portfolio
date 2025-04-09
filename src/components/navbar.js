@@ -29,8 +29,8 @@ function Navbar() {
                 className="relative text-4xl font-bold text-center inline-block pb-2 after:content-[''] after:block after:h-[2px] after:w-full after:mx-auto after:mt-2 after:bg-blue-400/30 after:rounded-full"
                 style={{ letterSpacing: "5px" }}
             >
-                <span className="text-blue-400">Žygimantas</span>{" "}
-                <span className="text-white">Buzas</span>
+                <span className="text-blue-400/50">Žygimantas</span>{" "}
+                <span className="">Buzas</span>
             </h1>
 
             {/* Navigation Links */}
