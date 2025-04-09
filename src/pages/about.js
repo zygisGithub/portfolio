@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { UserRound } from 'lucide-react';
+import { UserRound, Eye, Download } from 'lucide-react';
 
 const About = () => {
     const [showEnglishPreview, setShowEnglishPreview] = useState(false);
@@ -48,16 +48,18 @@ const About = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-14 max-w-md w-full">
                     <button
                         onClick={() => setShowEnglishPreview(true)}
-                        className="min-w-[220px] w-full py-2 px-4 bg-blue-500/30 hover:bg-blue-600/30 rounded text-white font-medium text-center whitespace-nowrap"
+                        className="min-w-[220px] w-full py-2 px-4 bg-blue-500/30 hover:bg-blue-600/30 rounded text-white font-medium text-center whitespace-nowrap flex items-center justify-center gap-2 group"
                     >
-                        Preview English CV
+                        <Eye className="w-5 h-5 transform group-hover:scale-110 transition-transform duration-200" />
+                        <span className="truncate">Preview</span>
                     </button>
                     <a
                         href="/files/ZygimantasBuzasENCV.pdf"
                         download="Zygimantas Buzas.pdf"
-                        className="min-w-[220px] w-full py-2 px-4 bg-gray-800/30 hover:bg-gray-700/30 rounded text-white font-medium text-center whitespace-nowrap"
+                        className="min-w-[220px] w-full py-2 px-4 bg-gray-800/30 hover:bg-gray-700/30 rounded text-white font-medium text-center whitespace-nowrap flex items-center justify-center gap-2 group"
                     >
-                        Download English CV
+                        <Download className="w-5 h-5 transform group-hover:scale-110 transition-transform duration-200" />
+                        <span className="truncate">Download</span>
                     </a>
                 </div>
             </div>
@@ -68,16 +70,18 @@ const About = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-14 max-w-md w-full">
                     <button
                         onClick={() => setShowLithuanianPreview(true)}
-                        className="min-w-[220px] w-full py-2 px-4 bg-blue-500/30 hover:bg-blue-600/30 rounded text-white font-medium text-center whitespace-nowrap"
+                        className="min-w-[220px] w-full py-2 px-4 bg-blue-500/30 hover:bg-blue-600/30 rounded text-white font-medium text-center whitespace-nowrap flex items-center justify-center gap-2 group"
                     >
-                        Preview Lithuanian CV
+                        <Eye className="w-5 h-5 transform group-hover:scale-110 transition-transform duration-200" />
+                        <span className="truncate">Preview</span>
                     </button>
                     <a
                         href="/files/ZygimantasBuzasLTCV.pdf"
                         download="Zygimantas Buzas.pdf"
-                        className="min-w-[220px] w-full py-2 px-4 bg-gray-800/30 hover:bg-gray-700/30 rounded text-white font-medium text-center whitespace-nowrap"
+                        className="min-w-[220px] w-full py-2 px-4 bg-gray-800/30 hover:bg-gray-700/30 rounded text-white font-medium text-center whitespace-nowrap flex items-center justify-center gap-2 group"
                     >
-                        Download Lithuanian CV
+                        <Download className="w-5 h-5 transform group-hover:scale-110 transition-transform duration-200" />
+                        <span className="truncate">Download</span>
                     </a>
                 </div>
             </div>
