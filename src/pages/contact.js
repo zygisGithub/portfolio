@@ -47,11 +47,11 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto px-6 text-gray-300 flex flex-col md:flex-row gap-10">
             {/* Left Column: Text + Socials */}
             <div className="md:w-1/2">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-wider flex items-center gap-2">
+                <h1 className="text-3xl sm:text-4xl font-semibold mb-6 tracking-wider flex items-center gap-2">
 
                     <Mail className="text-blue-400 w-6 h-6"/>
                     Contact Me
-                </h2>
+                </h1>
                 <p className="mb-4">
                     I’m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
                 </p>

@@ -40,9 +40,9 @@ const Projects = () => {
             <div className="mb-10">
                 <div className="flex items-center gap-2 mb-3">
                     <FolderKanban className="text-blue-400 w-6 h-6" />
-                    <h2 className="text-3xl sm:text-4xl font-semibold tracking-wide">
+                    <h1 className="text-3xl sm:text-4xl font-semibold tracking-wide">
                         Projects
-                    </h2>
+                    </h1>
                 </div>
                 <p className="text-gray-400 max-w-2xl">
                     Here are some of the projects I've worked on—from real-world apps to technical experiments.
